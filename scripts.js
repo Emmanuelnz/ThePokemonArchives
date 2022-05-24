@@ -25,13 +25,42 @@ let pokemonRepository = (function () {
   function getAll() {
     return pokemonList;
   }
+
+  function addListItem(pokemon) {
+    let pokemonList = document.querySelector('.pokemon-list');
+    let listPokemon = document.createElement('li');
+    let button = document.createElement('button');
+    button.innertext = pokemon.name;
+    button.classList.add('button');
+    button.addEventListener('click', function(showDetails){
+      console.log(showDetails(pokemon));
+    });
+    listPokemon.appendChild(button);
+    pokemonList.appendChild(listPokemon);
+  }
+
+  function showDetails(pokemon) {
+    console.log(pokemon)
+  }
+
   return {
     add: add,
-    getAll: getAll
+    getAll: getAll,
+    addListItem: addListItem,
   };
 })();
 
+pokemonRepository.add(
+  {
+  name: 'Zoroark',
+  height: 1.6,
+  types: ['Dark']
+  });
+
+
 pokemonRepository.getAll().forEach(function(pokemon)
 {
-pokemonRepository.add(pokemon)
+  pokemonRepository.addListItem(pokemon);
 });
+
+console.log(pokemonRepository.getAll());
