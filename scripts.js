@@ -30,9 +30,9 @@ let pokemonRepository = (function () {
     let pokemonList = document.querySelector('.pokemon-list');
     let listPokemon = document.createElement('li');
     let button = document.createElement('button');
-    button.innertext = pokemon.name;
+    button.innerText = pokemon.name;
     button.classList.add('button');
-    button.addEventListener('click', function(showDetails){
+    button.addEventListener('click', function(){
       console.log(showDetails(pokemon));
     });
     listPokemon.appendChild(button);
