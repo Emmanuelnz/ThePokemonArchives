@@ -40,10 +40,7 @@ let pokemonRepository = (function () {
         };
         add(pokemon);
       });
-    }),
-    catch(function(e) {
-      console.error(e);
-    })
+    });
   }
 
   return {
