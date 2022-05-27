@@ -31,7 +31,8 @@ let pokemonRepository = (function () {
   function loadList () {
     return fetch(apiUrl).then(function(response) {
       return response.json();
-    }).then(function(json) {
+    })
+    .then(function(json) {
       json.results.forEach(function(item) {
         let pokemon = {
           name: item.name,
@@ -53,10 +54,9 @@ let pokemonRepository = (function () {
   };
 })();
 
-
-pokemonRepository.getAll().forEach(function(pokemon)
-{
-  pokemonRepository.addListItem(pokemon);
+pokemonRepository.loadList().then(function() {
+  pokemonRepository.getAll().forEach(function(pokemon)
+  {
+    pokemonRepository.addListItem(pokemon);
+  });
 });
-
-console.log(pokemonRepository.getAll());
