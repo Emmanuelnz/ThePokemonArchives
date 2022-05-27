@@ -1,22 +1,7 @@
 
 let pokemonRepository = (function () {
-  let pokemonList = [
-    {
-      name: 'Umbreon',
-      height: 1,
-      types: ['Dark']
-    },
-    {
-      name: 'Zekrom',
-      height: 2.9,
-      types: ['Dragon, Electric']
-    },
-    {
-      name: 'Luxray',
-      height: 1.4,
-      types: ['Electric']
-    }
-  ];
+  let pokemonList = [];
+  let apiUrl = 'https://pokeapi.co/api/v2/pokemon/?limit=150';
 
   function add(pokemon) {
     pokemonList.push(pokemon);
@@ -43,19 +28,30 @@ let pokemonRepository = (function () {
     console.log(pokemon)
   }
 
+  function loadList () {
+    return fetch(apiUrl).then(function(response) {
+      return response.json();
+    }).then(function(json) {
+      json.results.forEach(function(item) {
+        let pokemon = {
+          name: item.name,
+          deatailsUrl: item.url
+        };
+        add(pokemon);
+      });
+    }),
+    catch(function(e) {
+      console.error(e);
+    })
+  }
+
   return {
     add: add,
     getAll: getAll,
     addListItem: addListItem,
+    loadList: loadList,
   };
 })();
-
-pokemonRepository.add(
-  {
-  name: 'Zoroark',
-  height: 1.6,
-  types: ['Dark']
-  });
 
 
 pokemonRepository.getAll().forEach(function(pokemon)
