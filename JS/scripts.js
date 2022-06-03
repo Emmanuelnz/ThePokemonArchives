@@ -62,10 +62,12 @@ let pokemonRepository = (function () {
     });
   }
 
+//modal for pokemon list
   function showModal(pokemon) {
     let modalContainer = document.querySelector('#modal-container');
     modalContainer.innerHTML = '';
 
+//The modal and its close button,title,pokemon height,pokemon type, and the pokemons img/picture
     let modal = document.createElement('div');
     modal.classList.add('modal');
 
@@ -105,12 +107,14 @@ let pokemonRepository = (function () {
     modalContainer.classList.remove('is-visible');
   }
 
+//hides/exits model using the ESC key on keyboard
   window.addEventListener('keydown', (e) => {
     if(e.key === 'Escape' && modalContainer.classList.contains('is-visible')) {
       hideModal();
     }
   });
 
+//hides/exits model when user clicks outside of model
   modalContainer.addEventListener('click', (e) => {
     let target = e.target;
     if (target === modalContainer) {
@@ -118,6 +122,7 @@ let pokemonRepository = (function () {
     }
   });
 
+//returns functions 
   return {
     add: add,
     getAll: getAll,
