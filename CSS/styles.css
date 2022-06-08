@@ -45,3 +45,12 @@
 .model p {
   margin bottom;
 }
+
+body {
+  background-image: url(https://www.pixelstalk.net/wp-content/uploads/2016/11/Backgrounds-Epic-Pokemon-HD-620x349.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+ h1 {
+   color: white;
+ }
