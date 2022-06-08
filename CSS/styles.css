@@ -35,6 +35,7 @@
   background: none;
   color: #777;
   text-decoration: underline;
+  cursor: pointer;
 }
 
 .modal h1 {
