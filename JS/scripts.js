@@ -74,7 +74,7 @@ let pokemonRepository = (function () {
     let closeButtonElement = document.createElement('button');
     closeButtonElement.classList.add('modal-close');
     closeButtonElement.innerText = 'Close';
-    closeButtonElement.addEventListener('click', hideModal());
+    closeButtonElement.addEventListener('click', ()=> hideModal());
 
     let titleElement = document.createElement('h1');
     titleElement.classList.add('pokemon-title');
@@ -104,6 +104,7 @@ let pokemonRepository = (function () {
   }
 
   function hideModal() {
+    let modalContainer = document.querySelector ('#modal-container');
     modalContainer.classList.remove('is-visible');
   }
 
@@ -122,7 +123,7 @@ let pokemonRepository = (function () {
     }
   });
 
-//returns functions 
+//returns functions
   return {
     add: add,
     getAll: getAll,
