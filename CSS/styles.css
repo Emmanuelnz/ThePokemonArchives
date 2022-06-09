@@ -12,3 +12,8 @@ h1 {
 .pokemon-title {
   color: #000000;
 }
+
+.list-group {
+  margin-top: 85px;
+  margin-bottom: 85px;
+}
