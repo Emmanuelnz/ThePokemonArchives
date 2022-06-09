@@ -23,9 +23,9 @@
   box-sizing: border-box;
   background: #fff;
   padding: 15px;
-  width: 100%;
-  max-width: 100%;
-  text-align: left;
+  width: auto;
+  height: auto;
+  text-align: center;
 }
 
 .modal-close {
@@ -44,15 +44,15 @@
 }
 
 .model p {
-  margin bottom;
+  margin-bottom: 0;
 }
 
 body {
-  background-image: url(https://www.pixelstalk.net/wp-content/uploads/2016/11/Backgrounds-Epic-Pokemon-HD-620x349.jpg);
+  background-image: url(https://www.pixelstalk.net/wp-content/uploads/2016/11/Epic-Pokemon-Photos-HD.png);
   background-size: cover;
   background-repeat: no-repeat;
 }
 
- h1 {
-   color: white;
- }
+h1 {
+  color: white;
+}
