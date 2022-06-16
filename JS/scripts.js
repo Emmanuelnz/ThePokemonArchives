@@ -64,6 +64,7 @@ let pokemonRepository = (function () {
   let search = document.getElementById('pokemon-search');
   search.addEventListener('input', searchList);
 
+  /*global $*/
   function searchList() {
     let searchInput = document.getElementById('pokemon-search').value;
     let listItem = $('li');
